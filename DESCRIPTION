@@ -1,0 +1,12 @@
+Package: autoreload.fix
+Title: Provides two solutions to refresh a Shiny App
+Version: 0.1
+Authors@R: 
+    person("Rene", "Vreede", , "vreede.rene@gmail.com", role = c("aut","cre"))
+Description: An addin is added to Rstudio which can be binded to a keyboard shortcut. Alternatively, a Shiny app can be launched which monitors file changes and updates the modified date of "app.R". This results in an automatic refresh of your app.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
+Imports: 
+    here

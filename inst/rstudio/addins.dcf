@@ -1,0 +1,4 @@
+Name: Refresh Shiny
+Description: Refreshes Shiny app.
+Binding: refresh
+Interactive: false
