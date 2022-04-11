@@ -10,3 +10,5 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
 Imports: 
     here
+URL: https://github.com/vreederene-90/autoreload.fix
+BugReports: https://github.com/vreederene-90/autoreload.fix/issues

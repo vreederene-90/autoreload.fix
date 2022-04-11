@@ -12,5 +12,8 @@ refresh()
 \description{
 An addin is added to Rstudio which can be binded to a keyboard shortcut.
 Alternatively, a Shiny app can be launched which monitors file changes and updates the modified date & time of "app.R".
-This results in an automatic refresh of your app. See (...)
+This results in an automatic refresh of your app.
+}
+\seealso{
+autorefresh
 }
