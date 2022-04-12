@@ -10,7 +10,7 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 
 Provides two solutions to refresh a Shiny App.
 
-The `option(shiny.autoreload = TRUE)` automatically refreshes a Shiny
+The `options(shiny.autoreload = TRUE)` automatically refreshes a Shiny
 app, however it comes with an issue. When working with multiple files
 (outside of app.R) the UI isnt refreshed properly. For instance, when
 working with modules or a `golem` you have to reboot the app in order to
@@ -28,7 +28,7 @@ app.R when a file in /R folder is updated or added (e.g., the latest
 
 ## Global option needed for both options
 
-`option(shiny.autoreload = TRUE)`
+`options(shiny.autoreload = TRUE)`
 
 ## Refresh
 
