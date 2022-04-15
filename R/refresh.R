@@ -13,6 +13,6 @@ refresh <- function(app.R = "app.R") {
   if ("app.R" %in% list.files(here::here())) {
     Sys.setFileTime(app.R, Sys.time())
   } else {
-    stop("Couldn't locate app.R, is it present at the root of your project?")
+    stop("Couldn't locate 'app.R', is it present at the root of your project?")
   }
 }

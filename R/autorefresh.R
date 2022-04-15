@@ -15,6 +15,8 @@ autorefresh <- function() {
 
   server <- function(input,output,session) {
 
+    options(shiny.autoreload = TRUE)
+
     newest_file <- function() {
       max(as.integer(file.mtime(
         list.files(path = "R", pattern = "*.R", full.names = T)
@@ -31,7 +33,6 @@ autorefresh <- function() {
           rv$init == newest_file()
         },
         valueFunc = function() {
-          print(paste0(Sys.time()," update triggered!"))
           newest_file()
         }
       )
@@ -41,9 +42,15 @@ autorefresh <- function() {
     )
 
     observe(
-      if(poll() != rv$init) {
-        Sys.setFileTime("app.R",Sys.time())
-        rv$init <- poll()
+      if("app.R" %in% list.files()) {
+        if(poll() != rv$init) {
+          Sys.setFileTime("app.R",Sys.time())
+          rv$init <- poll()
+          print(paste0(Sys.time(),": Update executed"))
+
+        }
+      } else {
+        stop("Couldn't locate 'app.R', is it present at the root of your project?")
       }
     )
 
