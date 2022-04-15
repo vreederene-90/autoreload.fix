@@ -19,8 +19,9 @@ see UI changes.
 This package provides two workarounds by updating the `file.mtime` of
 app.R when a file in /R folder is updated or added (e.g., the latest
 `file.mtime` of this folder changes)  
-1) Refresh  
-2) Autorefresh
+1) refresh(): Creates an addin for manual refreshing  
+2) autorefresh(): Runs a seperate shiny app that automatically refreshes
+your main app
 
 ## Install
 
