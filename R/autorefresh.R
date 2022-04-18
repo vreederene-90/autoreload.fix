@@ -42,15 +42,15 @@ autorefresh <- function() {
     )
 
     observe(
-      if("app.R" %in% list.files()) {
+      if ("dev/app.R" %in% list.files(here::here(), recursive = T)) {
         if(poll() != rv$init) {
-          Sys.setFileTime("app.R",Sys.time())
+          Sys.setFileTime("dev/app.R",Sys.time())
           rv$init <- poll()
           print(paste0(Sys.time(),": Update executed"))
 
         }
       } else {
-        stop("Couldn't locate 'app.R', is it present at the root of your project?")
+        stop("Couldn't locate 'app.R' in /dev (if you are working in a golem, rename run_dev.R)")
       }
     )
 

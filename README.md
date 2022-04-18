@@ -36,7 +36,11 @@ your main app
 After installation an Addin is added, which makes it possible to make a
 shortcut to the function `autoreload.fix::refresh()`. For example, you
 can bind it to F5. When executed, it refreshes the app. It is assumed
-the “app.R” file is in the project root.
+your “app.R” file is in the project root.
+
+So in practice this means you start up your app in a external sesion
+(e.g., terminal or job) and after saving your edited script in the /R
+folder you press the binded key.
 
 ![addin](man/figures/addin.png)  
 ![shortcut](man/figures/keyboard_shortcut.png)
@@ -46,11 +50,8 @@ the “app.R” file is in the project root.
 A Shiny app is started with `autoreload.fix::autorefresh()` that watches
 the /R folder and updates automatically when the `file.mtime` changes of
 the files in the /R folder.  
-It is advised to run this function via a terminal session (e.g.,
-`R -e "autoreload.fix::autorefresh()"`) from the root of the project
-folder.
-
-In addition, the project you are actually working on has to be run from
-a terminal (or external job) as well.
+It is needed to run this function (and your actual app) via a terminal
+session (e.g., `R -e "autoreload.fix::autorefresh()"`) from the root of
+the project folder. Otherwise this wont work.
 
 ![terminal](man/figures/terminal.png)

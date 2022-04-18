@@ -8,11 +8,11 @@
 #' @importFrom here here
 #' @seealso autorefresh
 #' @export
-refresh <- function(app.R = "app.R") {
+refresh <- function() {
 
-  if ("app.R" %in% list.files(here::here())) {
-    Sys.setFileTime(app.R, Sys.time())
+  if ("dev/app.R" %in% list.files(here::here(), recursive = T)) {
+    Sys.setFileTime("dev/app.R", Sys.time())
   } else {
-    stop("Couldn't locate 'app.R', is it present at the root of your project?")
+    stop("Couldn't locate 'app.R' in /dev (if you are working in a golem, rename run_dev.R)")
   }
 }
